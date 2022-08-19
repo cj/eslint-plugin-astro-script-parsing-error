@@ -1,0 +1,32 @@
+# build output
+dist/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+.*
+!.*rc
+!.*rc.js
+!.*rc.yml
+!.*ignore
+!.*config
+!.*lint.json
+!.gitattributes
+!.github
+!.ruby-version
+!.tool-versions
+!.husky
+!.gitkeep
+!.keep
+!.devcontainer
+!.vercelignore
+!*.vscode/public/build
+!.storybook
+!.vscode
