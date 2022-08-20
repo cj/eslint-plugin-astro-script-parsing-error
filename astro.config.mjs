@@ -39,6 +39,8 @@ export default defineConfig({
     port: 3000,
   },
 
+  site: `https://${process.env.VERCEL_URL}`,
+
   integrations: [
     tailwind(),
     preact({
