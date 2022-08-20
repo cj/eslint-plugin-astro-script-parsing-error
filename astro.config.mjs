@@ -34,5 +34,5 @@ export default defineConfig({
 
   output: 'server',
 
-  adapter: deno({ port: 8080 }),
+  adapter: deno({ port: import.meta.env.PORT || 8000 }),
 })
