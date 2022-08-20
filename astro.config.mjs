@@ -5,7 +5,7 @@ import preact from '@astrojs/preact'
 import prefetch from '@astrojs/prefetch' // import vercel from '@astrojs/vercel/serverless'
 import deno from '@astrojs/deno' // import { VitePWA } from 'vite-plugin-pwa';
 import solidJs from '@astrojs/solid-js'
-import vue from '@astrojs/vue'
+// import vue from '@astrojs/vue'
 import svelte from '@astrojs/svelte'
 
 const { PORT } = process.env
@@ -37,7 +37,8 @@ export default defineConfig({
       throttle: 3,
     }),
     solidJs(),
-    vue(),
+    // FIXME: https://github.com/vuejs/core/pull/6079
+    // vue(),
     svelte(),
   ],
 
@@ -48,4 +49,3 @@ export default defineConfig({
   }),
 })
 /* eslint-enable no-process-env */
-
