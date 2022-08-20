@@ -2,8 +2,10 @@
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import preact from '@astrojs/preact'
-import prefetch from '@astrojs/prefetch' // import vercel from '@astrojs/vercel/serverless'
-import deno from '@astrojs/deno' // import { VitePWA } from 'vite-plugin-pwa';
+import prefetch from '@astrojs/prefetch'
+import vercel from '@astrojs/vercel/serverless'
+// import deno from '@astrojs/deno'
+// import { VitePWA } from 'vite-plugin-pwa';
 import solidJs from '@astrojs/solid-js'
 // import vue from '@astrojs/vue'
 import svelte from '@astrojs/svelte'
@@ -44,7 +46,7 @@ export default defineConfig({
 
   output: 'server',
 
-  adapter: deno({
+  adapter: vercel({
     port: PORT || 8000,
   }),
 })
