@@ -22,6 +22,7 @@ module.exports = {
   rules: {
     'require-jsdoc': 'error',
     'no-warning-comments': 'off',
+    'eslint-comments/require-description': ['error', { ignore: ['eslint-enable'] }],
     'no-lonely-if': 'off',
     'new-cap': 'off',
     'no-shadow': 'off',

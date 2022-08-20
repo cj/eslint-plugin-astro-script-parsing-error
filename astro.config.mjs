@@ -1,3 +1,4 @@
+/* eslint-disable no-process-env -- need to use process.env in config */
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import preact from '@astrojs/preact'
@@ -5,6 +6,8 @@ import prefetch from '@astrojs/prefetch'
 // import vercel from '@astrojs/vercel/serverless'
 import deno from '@astrojs/deno'
 // import { VitePWA } from 'vite-plugin-pwa';
+
+const { PORT } = process.env
 
 // https://astro.build/config
 export default defineConfig({
@@ -34,5 +37,7 @@ export default defineConfig({
 
   output: 'server',
 
-  adapter: deno({ port: import.meta.env.PORT || 8000 }),
+  adapter: deno({ port: PORT || 8000 }),
 })
+
+/* eslint-enable no-process-env */
