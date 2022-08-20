@@ -2,10 +2,11 @@
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import preact from '@astrojs/preact'
-import prefetch from '@astrojs/prefetch'
-// import vercel from '@astrojs/vercel/serverless'
-import deno from '@astrojs/deno'
-// import { VitePWA } from 'vite-plugin-pwa';
+import prefetch from '@astrojs/prefetch' // import vercel from '@astrojs/vercel/serverless'
+import deno from '@astrojs/deno' // import { VitePWA } from 'vite-plugin-pwa';
+import solidJs from '@astrojs/solid-js'
+import vue from '@astrojs/vue'
+import svelte from '@astrojs/svelte'
 
 const { PORT } = process.env
 
@@ -28,16 +29,23 @@ export default defineConfig({
 
   integrations: [
     tailwind(),
-    preact({ compat: true }),
+    preact({
+      compat: true,
+    }),
     prefetch({
       // Allow up to three links to be prefetched concurrently
       throttle: 3,
     }),
+    solidJs(),
+    vue(),
+    svelte(),
   ],
 
   output: 'server',
 
-  adapter: deno({ port: PORT || 8000 }),
+  adapter: deno({
+    port: PORT || 8000,
+  }),
 })
-
 /* eslint-enable no-process-env */
+
