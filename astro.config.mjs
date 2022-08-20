@@ -10,12 +10,21 @@ import vercel from '@astrojs/vercel/serverless'
 import solidJs from '@astrojs/solid-js'
 // import vue from '@astrojs/vue'
 import svelte from '@astrojs/svelte'
+import sitemap from '@astrojs/sitemap'
+import compress from 'astro-compress'
+import mdx from '@astrojs/mdx'
+import image from '@astrojs/image'
+// TODO: Add https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt
 
 const { PORT } = process.env
 
 // https://astro.build/config
 export default defineConfig({
   vite: {
+    build: {
+      outDir: './dist',
+      assetsDir: './public',
+    },
     plugins: [
       // NOTE: Waiting on https://vite-plugin-pwa.netlify.app/deployment/vercel.html
       // VitePWA()
@@ -43,6 +52,10 @@ export default defineConfig({
     // FIXME: https://github.com/vuejs/core/pull/6079
     // vue(),
     svelte(),
+    mdx(),
+    sitemap(),
+    image(),
+    compress(),
   ],
 
   output: 'server',
