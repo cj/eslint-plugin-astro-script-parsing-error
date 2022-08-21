@@ -23,6 +23,13 @@ const { title } = Astro.props as Props
     <GoogleFontsOptimizer
       url="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap"
     />
+
+    <script>
+      // eslint-disable-next-line node/no-unsupported-features/es-syntax -- false positive
+      import flamethrower from 'flamethrower-router'
+      flamethrower({ log: true, pageTransitions: true, prefetch: 'visible' })
+      // eslint-enable
+    </script>
   </head>
   <body>
     <slot />

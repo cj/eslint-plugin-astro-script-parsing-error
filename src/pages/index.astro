@@ -1,6 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
+import Layout from 'layouts/Layout.astro'
+import Card from 'components/Card.astro'
+import type { AppRouter } from 'server'
+import { createTRPCClient } from '@trpc/client'
+
+const client = createTRPCClient<AppRouter>({
+  url: `${Astro.url.origin}/api/trpc`,
+})
+
+const response = await Promise.all([
+  client.query('getUser', 'foobar'),
+  client.mutation('createUser', { name: 'testing' }),
+])
+
+const [user] = response
 ---
 
 <Layout title="Welcome to Astro.">
@@ -8,6 +21,11 @@ import Card from '../components/Card.astro'
     <h1 class="text-amber-700">
       Welcome to <span class="text-gradient">Astro</span>
     </h1>
+
+    <h2>{user.name}</h2>
+
+    <a href="/foo">Go to Foo</a>
+
     <p class="instructions">
       Check out the <code>src/pages</code> directory to get started.<br />
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
