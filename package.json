@@ -84,7 +84,7 @@
     "astro-google-fonts-optimizer": "^0.2.1",
     "astro-icon": "^0.7.3",
     "astro-seo": "^0.5.1",
-    "flamethrower-router": "^0.0.0-meme.8",
+    "flamethrower-router-cj": "^0.0.0-meme.8",
     "solid-js": "^1.4.8",
     "svelte": "^3.49.0",
     "vue": "latest",

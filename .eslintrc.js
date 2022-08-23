@@ -63,8 +63,9 @@ module.exports = {
             splitLiteral: true,
           },
         ],
-        'prettier/prettier': 'error',
+        'prettier/prettier': 'off',
         'no-console': 'off',
+        'node/no-unsupported-features/es-syntax': 'off',
       },
     },
     {
@@ -73,6 +74,10 @@ module.exports = {
       files: ['**/*.astro/*.js', '*.astro/*.js'],
       parserOptions: {
         sourceType: 'module',
+      },
+      rules: {
+        'prettier/prettier': 'off',
+        'node/no-unsupported-features/es-syntax': 'off',
       },
     },
     {

@@ -5288,10 +5288,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flamethrower-router@npm:^0.0.0-meme.8":
+"flamethrower-router-cj@npm:^0.0.0-meme.8":
   version: 0.0.0-meme.8
-  resolution: "flamethrower-router@npm:0.0.0-meme.8"
-  checksum: 6826fe114efaadeabe3b356165af097c6ff4ba3c0f7eaac88cc41ba8b06dd644633390af84e07c31e2b3357a9ea33429966d4179612ca916970ec3c85c15d8f8
+  resolution: "flamethrower-router-cj@npm:0.0.0-meme.8"
+  checksum: f8d22400006ce4b7d3461b717044a45cac30cea92be2644505e5b43f9878ce2404e520fdf7f23cf87eea4d41926affd623e5ea05d248324acd2a680c36dac726
   languageName: node
   linkType: hard
 
@@ -8030,7 +8030,7 @@ __metadata:
     eslint-plugin-svelte: ^2.6.0
     eslint-plugin-vue: ^9.3.0
     eslint-plugin-yml: ^1.1.0
-    flamethrower-router: ^0.0.0-meme.8
+    flamethrower-router-cj: ^0.0.0-meme.8
     preact: ^10.10.6
     prettier: ^2.7.1
     prettier-plugin-astro: ^0.5.0

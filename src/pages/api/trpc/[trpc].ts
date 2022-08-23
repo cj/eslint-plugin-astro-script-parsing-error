@@ -11,10 +11,10 @@ import type { HTTPHeaders } from '@trpc/client'
  *
  * @beta
  */
-async function astroHttpHandler({ request, params }: APIContext): Promise<Response> {
+async function httpHandler({ request, params }: APIContext): Promise<Response> {
   const query = new URL(request.url).searchParams
 
-  const body = request.method === 'GET' ? {} : await request.json()
+  const requestBody = request.method === 'GET' ? {} : await request.json()
 
   const { status, headers, ...response } = await resolveHTTPResponse({
     async createContext() {
@@ -26,7 +26,7 @@ async function astroHttpHandler({ request, params }: APIContext): Promise<Respon
       query,
       method: request.method,
       headers: request.headers as unknown as HTTPHeaders,
-      body,
+      body: requestBody,
     },
   })
 
@@ -36,6 +36,6 @@ async function astroHttpHandler({ request, params }: APIContext): Promise<Respon
   })
 }
 
-export const post = astroHttpHandler
+export const post = httpHandler
 
-export const get = astroHttpHandler
+export const get = httpHandler
