@@ -14,7 +14,12 @@
     // Enable strict type checking.
     "strict": true,
     // Error when a value import is only used as a type.
+    "allowSyntheticDefaultImports": true,
     "importsNotUsedAsValues": "error",
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    // "jsx": "preserve",
+    "jsx": "react"
+    // "jsxFactory": "h",
+    // "jsxFragmentFactory": "Fragment"
   }
 }

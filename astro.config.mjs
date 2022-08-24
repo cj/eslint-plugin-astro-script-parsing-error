@@ -21,10 +21,6 @@ const { PORT } = process.env
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    build: {
-      outDir: './dist',
-      assetsDir: './public',
-    },
     plugins: [
       // NOTE: Waiting on https://vite-plugin-pwa.netlify.app/deployment/vercel.html
       // VitePWA()

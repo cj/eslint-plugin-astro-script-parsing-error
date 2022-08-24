@@ -6,6 +6,9 @@ module.exports = {
     ecmaVersion: 'latest',
     project: require.resolve('./tsconfig.json'),
   },
+  globals: {
+    JSX: true,
+  },
   extends: [
     'plugin:@ota-meshi/recommended',
     'plugin:@ota-meshi/+node',
@@ -101,6 +104,7 @@ module.exports = {
     {
       files: ['*.jsx', '*.tsx'],
       extends: ['plugin:react/recommended', 'plugin:react-hooks/recommended'],
+
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
@@ -108,13 +112,21 @@ module.exports = {
       },
     },
     {
-      files: ['*.ts'],
+      files: ['*.ts', '*.tsx'],
+      extends: ['airbnb', 'airbnb/hooks', 'airbnb-typescript'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
         sourceType: 'module',
         project: require.resolve('./tsconfig.json'),
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
       rules: {
+        semi: ['error', 'never'],
+        '@typescript-eslint/semi': ['error', 'never'],
+        'import/prefer-default-export': 'off',
+        quotes: ['error', 'single'],
         '@typescript-eslint/naming-convention': [
           'error',
           {
@@ -143,6 +155,48 @@ module.exports = {
           },
         ],
         '@typescript-eslint/no-non-null-assertion': 'off',
+      },
+    },
+    {
+      files: ['src/components/**/*.tsx'],
+      rules: {
+        'react/jsx-no-undef': ['error', { allowGlobals: true }],
+        'react/react-in-jsx-scope': 'off',
+        'require-jsdoc': 'off',
+        'react/prop-types': 'off',
+        '@typescript-eslint/naming-convention': [
+          'off',
+          {
+            selector: 'default',
+            format: ['PascalCase'],
+            leadingUnderscore: 'allow',
+            trailingUnderscore: 'allow',
+          },
+          {
+            selector: 'variable',
+            format: ['camelCase', 'UPPER_CASE'],
+            leadingUnderscore: 'allow',
+            trailingUnderscore: 'allow',
+          },
+          {
+            selector: 'function',
+            format: ['camelCase', 'PascalCase'],
+            leadingUnderscore: 'allow',
+            trailingUnderscore: 'allow',
+          },
+          {
+            selector: 'typeLike',
+            format: ['PascalCase'],
+          },
+          {
+            selector: 'property',
+            format: null,
+          },
+          {
+            selector: 'method',
+            format: null,
+          },
+        ],
       },
     },
     {

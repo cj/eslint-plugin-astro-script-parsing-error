@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.astro"
+  ],
+  "exclude": [
+    "node_modules",
+    ".cache",
+    ".next",
+    ".turbo",
+    ".yarn"
+  ]
+}

@@ -1,3 +1,4 @@
+/* eslint-disable node/no-unpublished-require -- we allow dev dependencies in here */
 'use strict'
 
 /** @type {import('tailwindcss').Config} */
@@ -6,5 +7,6 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 }
+/* eslint-enable node/no-unpublished-require */

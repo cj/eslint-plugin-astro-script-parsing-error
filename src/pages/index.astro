@@ -3,6 +3,7 @@ import Layout from 'layouts/Layout.astro'
 import Card from 'components/Card.astro'
 import type { AppRouter } from 'server'
 import { createTRPCClient } from '@trpc/client'
+import Link from '@julian_cataldo/astro-link/Link.astro'
 
 const client = createTRPCClient<AppRouter>({
   url: `${Astro.url.origin}/api/trpc`,
@@ -24,7 +25,14 @@ const [user] = response
 
     <h2>{user.name}</h2>
 
-    <a href="/foo">Go to Foo</a>
+    <ul class="menu menu-compact menu-horizontal base bg-base-300 p-2 rounded-box">
+      <li>
+        <Link href={'/foo'}>Go to Foo</Link>
+      </li>
+      <li>
+        <Link href={'/me'}>Me</Link>
+      </li>
+    </ul>
 
     <p class="instructions">
       Check out the <code>src/pages</code> directory to get started.<br />

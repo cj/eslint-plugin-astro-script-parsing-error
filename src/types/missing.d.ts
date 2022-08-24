@@ -6,4 +6,16 @@ declare module 'astro-google-fonts-optimizer' {
   export default value
 }
 
+declare module 'daisyui' {
+  const value: any
+  export default value
+}
+
+declare module 'utils/nhost-react' {
+  const nhostReact = require('@nhost/react')
+  export const nhostStore: any
+  const value: typeof nhostReact
+  export default value
+}
+
 /* eslint-enable -- enabling */

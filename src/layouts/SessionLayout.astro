@@ -1,0 +1,38 @@
+---
+export interface Props {
+  title: string
+}
+
+import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer'
+import { SessionProvider } from 'components/SessionProvider'
+
+const { title } = Astro.props as Props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap"
+    />
+
+    <script>
+      import flamethrower from 'flamethrower-router-cj'
+      flamethrower({ log: import.meta.env.DEV, pageTransitions: true, prefetch: 'visible' })
+    </script>
+  </head>
+  <body>
+    <SessionProvider client:load>
+      <slot />
+    </SessionProvider>
+  </body>
+</html>
