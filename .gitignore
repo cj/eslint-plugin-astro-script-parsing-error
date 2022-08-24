@@ -31,3 +31,4 @@ pnpm-debug.log*
 !.storybook
 !.vscode
 !.yarn
+!.env.example
