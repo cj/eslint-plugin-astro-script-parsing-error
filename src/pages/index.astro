@@ -18,14 +18,14 @@ const [user] = response
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
+  <main class="prose">
     <h1 class="text-amber-700">
       Welcome to <span class="text-gradient">Astro</span>
     </h1>
 
     <h2>{user.name}</h2>
 
-    <ul class="menu menu-compact menu-horizontal base bg-base-300 p-2 rounded-box">
+    <ul class="menu menu-compact menu-horizontal base bg-base-300 p-2 rounded-box not-prose">
       <li>
         <Link href={'/foo'}>Go to Foo</Link>
       </li>
@@ -38,7 +38,7 @@ const [user] = response
       Check out the <code>src/pages</code> directory to get started.<br />
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
     </p>
-    <ul class="link-card-grid">
+    <ul class="not-prose link-card-grid list-none">
       <Card
         href="https://docs.astro.build/"
         title="Documentation"
