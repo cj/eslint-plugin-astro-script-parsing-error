@@ -10,8 +10,8 @@ import vercel from '@astrojs/vercel/serverless'
 import solidJs from '@astrojs/solid-js'
 // import vue from '@astrojs/vue'
 import svelte from '@astrojs/svelte'
-// import sitemap from '@astrojs/sitemap'
-// import compress from 'astro-compress'
+import sitemap from '@astrojs/sitemap'
+import compress from 'astro-compress'
 import mdx from '@astrojs/mdx'
 import image from '@astrojs/image'
 // TODO: Add https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt
@@ -51,9 +51,9 @@ export default defineConfig({
     // vue(),
     svelte(),
     mdx(),
-    // sitemap(),
+    sitemap(),
     image(),
-    // compress(),
+    compress(),
   ],
 
   output: 'server',
