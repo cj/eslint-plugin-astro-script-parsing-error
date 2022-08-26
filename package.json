@@ -10,7 +10,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "deno run --allow-net --allow-read ./dist/server/entry.mjs",
     "astro": "astro"
   },
   "peerDependencies": {
