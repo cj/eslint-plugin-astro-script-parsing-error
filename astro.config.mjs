@@ -25,9 +25,9 @@ export default defineConfig({
       // NOTE: Waiting on https://vite-plugin-pwa.netlify.app/deployment/vercel.html
       // VitePWA()
     ],
-    ssr: {
-      external: ['svgo'],
-    },
+    // ssr: {
+    //   external: ['svgo'],
+    // },
   },
 
   server: {
