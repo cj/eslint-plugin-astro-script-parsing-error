@@ -1,4 +1,4 @@
-import { NhostClient } from '@nhost/react'
+import { NhostClient } from '@nhost/nextjs'
 import { atom } from 'nanostores'
 
 const nhostClient = new NhostClient({
